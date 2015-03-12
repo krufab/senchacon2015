@@ -1,0 +1,121 @@
+.daybar {
+  @include blocks($grey);
+  position: relative;
+  
+  > span {
+    @include blocks($green);
+
+    color: #fff;
+    font-size: 0.7em;
+    text-align: center;
+    height: 100%;
+    overflow: hidden; 
+    position: absolute;
+  }
+}
+
+.x-btn-glyph.design { color: darken($green, 10%); }
+.x-btn-glyph.develop { color: $lightblue; }
+.x-btn-glyph.deploy { color: darken($base-color, 10%); }
+
+.heart {
+  color: red !important;
+}
+
+div.presentation {
+  padding: 5px;
+
+  div.description {
+    font-size: 15px;
+    font-family: 'Helvetica';
+    line-height: 22px;
+    padding: 0 10px;
+
+    @include transition-property(opacity, height);
+    @include transition-duration(1s);
+
+    height: 300px;
+    opacity: 1;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  &.collapsed div.description {
+    height: 0;
+    opacity: 0;
+  }
+
+  div.title {
+    position: relative;
+    font-weight: bold;
+    line-height: 50px;
+    font-family: Klavika;
+    font-size: 18px;
+    vertical-align: top;
+    color: $lightblue;
+  }
+  div.title:before {
+    color: darken($grey, 20%);
+    content: "\6f";
+    font-family: 'senchacon';
+    font-size: 25px;
+  }
+  &.collapsed div.title:before {
+    content: "\4f";
+  }
+
+  .trackicon {
+    border-radius: 50px;
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+
+    position: absolute;
+    right: 0;
+    top: -35px;
+
+    &:before {
+      color: #fff;
+      font-size: 24px;
+      line-height: 35px;
+      text-align: center;
+      display: block;
+    }
+
+    &.design {
+      background: $green;
+      font-size: 20px;
+      padding: 0 0 0 3px;
+      &:before {
+        content: "\65";
+      }
+    }
+    &.develop {
+      background: $lightblue;
+      &:before {
+        content: "\63";
+      }
+    }
+    &.deploy {
+      background: $base-color;
+      &:before {
+        content: "\43";
+      }
+    }
+  }
+
+  .trackicon {
+    font-family: 'senchacon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+}

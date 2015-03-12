@@ -9,18 +9,17 @@ Ext.define('MyApp.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     requires: [
-        'Ext.window.MessageBox'
+        'Ext.state.LocalStorageProvider'
     ],
 
     alias: 'controller.main',
 
-    onClickButton: function () {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
+    onFilterSessions: function(form, e) {
+        var grid = form.up('grid');
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
+        grid.getStore().addFilter({
+           property: 'first',
+           value: form.getValue()
+        });
     }
 });

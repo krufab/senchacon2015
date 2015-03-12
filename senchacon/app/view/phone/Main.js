@@ -1,10 +1,3 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "autoCreateViewport" property. That setting automatically applies the "viewport"
- * plugin to promote that instance of this class to the body element.
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
 Ext.define('MyApp.view.phone.Main', {
     extend: 'Ext.container.Container',
     requires: [
@@ -13,7 +6,7 @@ Ext.define('MyApp.view.phone.Main', {
         'Ext.grid.Panel'
     ],
 
-    xtype: 'app-main',
+    xtype: 'app-main-phone',
     
     controller: 'main',
     viewModel: {
@@ -26,6 +19,7 @@ Ext.define('MyApp.view.phone.Main', {
 
     items: [{
         xtype: 'gridpanel',
+        cls: 'phonelist',
         reference: 'phonemenu',
         region: 'west',
         bind: {
@@ -37,19 +31,45 @@ Ext.define('MyApp.view.phone.Main', {
             flex: 1
         }],
         width: 250,
-        split: true,
+        split: {
+            size: 0
+        },
         collapsible: true,
         collapseMode:'mini',
-        collapsed: true
+        collapsed: true,
+        listeners: {
+            itemclick: function(grid, rec){
+                var deck = grid.up('app-main-phone').lookupReference('deck');
+                deck.removeAll();
+                deck.add({
+                    xtype: rec.get('typename'),
+                    glyph: rec.get('glyph'),
+                    title: rec.get('title'),
+                    headerPosition: 'bottom'
+                });
+            }
+        }
     },{
         region: 'center',
+        layout: 'card',
+        reference: 'deck',
+        bodyPadding: 5,
+        
+        items: [{
+            xtype: 'app-sessions',
+            glyph: '83@senchacon',
+            title: 'Sessions',
+            headerPosition: 'bottom'
+        }],
+
         dockedItems: [{
             xtype: 'toolbar',
+            ui: 'dark',
             items: [{
-                iconCls: 'hamburger',
-                glyph: 108,
+                ui: 'dark',
+                glyph: '108@senchacon',
                 handler: function(btn){
-                    btn.up('app-main').lookupReference('phonemenu').toggleCollapse();
+                    btn.up('app-main-phone').lookupReference('phonemenu').toggleCollapse();
                 }
             },{
                 xtype: 'tbtext',
@@ -61,8 +81,9 @@ Ext.define('MyApp.view.phone.Main', {
     }],
 
     initComponent: function(){
-        //add the phone base CSS class on the body
-        Ext.getBody().addCls('phone');
+        //add the phone base id  on the body
+        //for styling purposes
+        Ext.getBody().setId('phone');
         this.callParent(arguments);
     }
 });

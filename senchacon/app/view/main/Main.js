@@ -16,11 +16,19 @@ Ext.define('MyApp.view.main.Main', {
         type: 'main'
     },
     
+    bodyPadding: 15,
+    
     dockedItems: [{
         xtype: 'toolbar',
         docked: 'top',
         reference: 'toptoolbar',
-        items:['SenchaCon']
+        ui: 'dark',
+        items:[{
+            xtype: 'tbtext',
+            flex: 1,
+            cls: 'tbtitle',
+            text: 'SenchaCon'
+        }]
     }],
 
     /* note that I am not using these,
@@ -46,6 +54,11 @@ Ext.define('MyApp.view.main.Main', {
 
         for(i; i<l;i++){
             tabItems[i].setIconAlign(conf.iconAlign);
+            if(conf.pack === "center") {
+                tabItems[i].setWidth(100);
+            } else {
+                tabItems[i].setWidth(null);
+            }
         }
 
         tb.setLayout({
@@ -78,7 +91,7 @@ Ext.define('MyApp.view.main.Main', {
             };
             
         if(me.rendered){
-            Ext.getBody().removeCls('tablet');
+            Ext.getBody().setId('desktop');
 
             //configure a small screen
             //else take defaults
@@ -88,7 +101,7 @@ Ext.define('MyApp.view.main.Main', {
                 settings.position = 'bottom';
                 settings.iconAlign = 'top';
 
-                Ext.getBody().addCls('tablet');
+                Ext.getBody().setId('tablet');
             } 
 
             me.configureInterface(settings);
@@ -103,6 +116,7 @@ Ext.define('MyApp.view.main.Main', {
         me.suspendLayout = true;
         s.each(function(rec){
             me.add({
+                xtype: rec.get('typename'),
                 glyph: rec.get('glyph'),
                 title: rec.get('title')
             });
