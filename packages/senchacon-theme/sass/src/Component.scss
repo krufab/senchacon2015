@@ -60,8 +60,29 @@
 
 /* Global CSS */
 
-.x-tab-default-bottom.x-tab-active.x-tab-focus {
-  box-shadow: none;
+#tablet {
+
+  .x-tab-tab.x-docked-bottom {
+    border-top-width: 3px !important;
+    border-top-color: $green;
+  }
+  .x-tab-default-bottom .x-tab-inner {
+    font-weight: 100;
+  }
+
+  .x-tab-default-bottom.x-tab-active.x-tab-focus {
+    box-shadow: none;
+  }
+
+}
+
+#desktop {
+  .x-tab-default-top.x-tab-active.x-tab-focus {
+    box-shadow: none;
+  }
+  .x-tab-default-top {
+    background: lighten($base-color, 5%);
+  }
 }
 
 .x-toolbar-dark{

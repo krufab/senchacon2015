@@ -16,7 +16,8 @@ Ext.define('MyApp.view.speakers.Speakers', {
     bind: {
        store: '{speakers}'
     },
-
+    scrollable: true,
+    
     dockedItems: [{
         xtype: 'toolbar',
         items: [{
