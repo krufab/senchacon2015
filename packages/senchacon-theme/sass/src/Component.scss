@@ -60,6 +60,10 @@
 
 /* Global CSS */
 
+.x-tab-default-bottom.x-tab-active.x-tab-focus {
+  box-shadow: none;
+}
+
 .x-toolbar-dark{
   .tbtitle {
     color: #fff;
