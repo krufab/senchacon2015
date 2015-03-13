@@ -79,15 +79,15 @@ Ext.define('MyApp.view.sessions.Presentations', {
     },
 
     onDataviewItemClick: function(dataview, record, item, index, e, eOpts) {
-        if (Ext.fly(e.target).hasCls('favorite')){
+        if (Ext.fly(e.target).hasCls('favoriteicon')){
             if (MyApp.stateProvider.get(record.data.id)){
                 MyApp.stateProvider.clear(record.data.id);
                 Ext.fly(e.target).removeCls('heartin');
                 Ext.fly(e.target).addCls('heartout');
             } else {
                MyApp.stateProvider.set(record.data.id, true);
-               Ext.fly(e.target).removeCls('heartin');
-               Ext.fly(e.target).addCls('heartout');
+               Ext.fly(e.target).removeCls('heartout');
+               Ext.fly(e.target).addCls('heartin');
             }
         } else if (!Ext.fly(e.target).hasCls('description')){
             Ext.fly(item).down('div.presentation').toggleCls('collapsed');

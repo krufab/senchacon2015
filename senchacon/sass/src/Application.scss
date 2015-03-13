@@ -7,6 +7,7 @@
 
     color: #fff;
     font-size: 0.7em;
+    font-weight: bold;
     text-align: center;
     height: 100%;
     overflow: hidden; 
@@ -64,6 +65,30 @@ div.presentation {
   }
   &.collapsed div.title:before {
     content: "\4f";
+  }
+
+  .favoriteicon {
+
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    font-family: 'senchacon';
+
+    &.heartin {
+      &:before {
+        content: "H";
+        color: red;
+        font-size: 20px;
+      }
+    }
+    &.heartout {
+      &:before {
+        content: "h";
+        color: red;
+        font-size: 20px;
+      }
+    }
+
   }
 
   .trackicon {
