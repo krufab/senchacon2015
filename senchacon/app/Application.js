@@ -8,10 +8,6 @@ Ext.define('MyApp.Application', {
     
     name: 'MyApp',
 
-    requires: ['MyApp.view.main.Main'],
-    mainView: 'MyApp.view.main.Main',
-    profiles: ['Phone'],
-
     launch: function(){
     	Ext.state.Manager.setProvider(Ext.create('Ext.state.LocalStorageProvider'));
     }

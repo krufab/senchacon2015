@@ -2,6 +2,7 @@ Ext.define('MyApp.view.speakers.Speakers', {
     extend: 'Ext.grid.Panel',
     requires: [
         'Ext.toolbar.Toolbar',
+        'Ext.form.field.Text',
         'MyApp.view.main.MainController'
     ],
 

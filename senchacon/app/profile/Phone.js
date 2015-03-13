@@ -7,6 +7,7 @@ Ext.define('MyApp.profile.Phone', {
     },
 
     isActive: function() {
+        console.log('phone', Ext.os.deviceType === 'Phone');
         return Ext.os.deviceType === 'Phone';
     }
 });

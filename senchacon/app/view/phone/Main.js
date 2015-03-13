@@ -10,7 +10,7 @@ Ext.define('MyApp.view.phone.Main', {
     
     controller: 'main',
     viewModel: {
-        type: 'main'
+       type: 'main'
     },
 
     layout: {
@@ -78,9 +78,9 @@ Ext.define('MyApp.view.phone.Main', {
                 text: 'SenchaCon'
             }]
         }]
-    }],
+    }]
 
-    initComponent: function(){
+    ,initComponent: function(){
         //add the phone base id  on the body
         //for styling purposes
         Ext.getBody().setId('phone');
