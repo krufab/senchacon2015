@@ -6,8 +6,10 @@ Ext.define('MyApp.view.main.Main', {
         'Ext.grid.Panel',
         'Ext.mixin.Responsive',
         'Ext.plugin.Responsive',
+        'Ext.plugin.Viewport'
     ],
     mixins: ['MyApp.view.utils.SmallScreen'],
+    plugins: ['viewport'],
 
     xtype: 'app-main',
     
