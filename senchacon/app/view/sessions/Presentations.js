@@ -17,14 +17,11 @@ Ext.define('MyApp.view.sessions.Presentations', {
     emptyText: 'There are no matching presentations.',
     itemTpl: Ext.create('Ext.XTemplate', 
         '<div class="presentation collapsed">',
-        '    <div',
-        '         class="daybar" ',
-        '         style="width:{[this.getDaybarWidth(values)]}px;"',
-        '         >',
+        '    <div class="daybar">',
         '        {[this.getPresentationBar(values)]}',
         '    </div>',
         '    <div class="title">',
-        //'        {[this.getFavoriteIcon(values)]}',
+        '        {[this.getFavoriteIcon(values)]}',
         '        {[this.getTrackIcon(values)]}',
         '        {title}',
         '    </div> ',
@@ -44,39 +41,23 @@ Ext.define('MyApp.view.sessions.Presentations', {
         '</div>',
         {
             getPresentationBar: function(values) {
-                var pixelsPerMinute = 1.75,
-                    startString = Ext.Date.format(values.startTime, 'H:i'),
-                    endString = Ext.Date.format(values.endTime, 'H:i'),
-                    presentationMinutes = (Ext.Date.getElapsed(values.endTime, values.startTime) / 1000 / 60),
-                    presentationWidth = (presentationMinutes * pixelsPerMinute),
-                    startOfDay = Ext.Date.clone(values.startTime),
-                    endOfDay = Ext.Date.clone(values.startTime),
-                    startMinutes, startPixels, style = "";
-                
-                startOfDay.setHours(9);
-                endOfDay.setHours(18);
+                var startOfDayMinutesFromMidnight = (8 * 60); // 8:00 times 60 minutes per hour
+                var endOfDayMinutesFromMidnight = (19 * 60); // 19:00 times 60 minutes per hour
+                var durationOfDayMinutes = (endOfDayMinutesFromMidnight - startOfDayMinutesFromMidnight);
+                var percentagePerMinute = (1 / durationOfDayMinutes * 100);
+                var startOfLectureMinutes = (values.startMinutesFromMidnight - startOfDayMinutesFromMidnight);
 
-                startMinutes = (Ext.Date.getElapsed(startOfDay, values.startTime) / 1000 / 60);
-                startPixels = (startMinutes * pixelsPerMinute);
-                style = 'width: ' + presentationWidth + 'px' + ';' + 'left: ' + startPixels + 'px;';
+                var startPercentage = (startOfLectureMinutes * percentagePerMinute);
+                var durationPercentage = (values.duration * percentagePerMinute);
+
+                var style = 'left: ' + startPercentage + '%; width: ' + durationPercentage + '%; ';
+
+                var startString = Ext.Date.format(values.startTime, 'H:i');
+                var endString = Ext.Date.format(values.endTime, 'H:i');
 
                 return '<span style="'+style+'">' + startString + ' - ' + endString + '</span>';
             },
-            getDaybarWidth: function(values) {
-                var pixelsPerMinute = 1.75;
-                var startOfDay = Ext.Date.clone(values.startTime);
-                Ext.Date.clearTime(startOfDay);
-                var endOfDay = Ext.Date.clone(values.startTime);
-                Ext.Date.clearTime(endOfDay);
-                startOfDay.setHours(9);
-                endOfDay.setHours(18);
-                var dayMinutes = (Ext.Date.getElapsed(startOfDay, endOfDay) / 1000 / 60);
-                var dayPixels = (dayMinutes * pixelsPerMinute);
-                
-                return dayPixels;
-            },
             getFavoriteIcon: function(values) {
-                console.log(MyApp.stateProvider.get(values.id));
                 var cls = (MyApp.stateProvider.get(values.id)?'heartin':'heartout');
                 return '<span class="favoriteicon ' + cls +'"></span>';
             },

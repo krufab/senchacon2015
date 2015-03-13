@@ -2,16 +2,10 @@ Ext.define('MyApp.view.sessions.Sessions', {
     extend: 'Ext.panel.Panel',
     requires: [
         'Ext.toolbar.Toolbar',
-        'MyApp.view.sessions.Presentations',
-        'MyApp.view.main.MainController'
+        'MyApp.view.sessions.Presentations'
     ],
 
     xtype: 'app-sessions',
-
-    //controller: 'main',
-    //viewModel: {
-    //    type: 'main'
-    //},
 
     items: [{
         xtype: 'app-presentations',

@@ -26,6 +26,18 @@ Ext.define('MyApp.model.Presentation', {
         {
             mapping: 'track.name',
             name: 'track'
+        },
+                {
+            calculate: function(data) {
+                return (Ext.Date.getElapsed(data.startTime, data.endTime)) / 1000 / 60;
+            },
+            name: 'duration'
+        },
+        {
+            calculate: function(data) {
+                return ((data.startTime.getHours() * 60) + data.startTime.getMinutes());
+            },
+            name: 'startMinutesFromMidnight'
         }
     ],
 

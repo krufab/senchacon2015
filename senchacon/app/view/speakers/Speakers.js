@@ -40,12 +40,12 @@ Ext.define('MyApp.view.speakers.Speakers', {
         }
     }, {
         text: 'Last Name',
-        dataIndex: 'last',
+        dataIndex: 'last'
     }, {
         xtype: 'datecolumn',
         text: 'Event Date',
         format: 'F j, Y',
         dataIndex: 'day',
-        flex: 1,
+        flex: 1
     }]
 });

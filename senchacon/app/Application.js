@@ -9,6 +9,6 @@ Ext.define('MyApp.Application', {
     name: 'MyApp',
 
     launch: function(){
-    	Ext.state.Manager.setProvider(Ext.create('Ext.state.LocalStorageProvider'));
+    	MyApp.stateProvider = Ext.create('Ext.state.LocalStorageProvider');
     }
 });
