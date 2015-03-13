@@ -51,11 +51,12 @@ Ext.define('MyApp.view.sessions.Presentations', {
                 var durationPercentage = (values.duration * percentagePerMinute);
 
                 var style = 'left: ' + startPercentage + '%; width: ' + durationPercentage + '%; ';
+                var cls = this.trackIconCls[values.track];
 
                 var startString = Ext.Date.format(values.startTime, 'H:i');
                 var endString = Ext.Date.format(values.endTime, 'H:i');
 
-                return '<span style="'+style+'">' + startString + ' - ' + endString + '</span>';
+                return '<span class= "'+cls+'" style="'+style+'">' + startString + ' - ' + endString + '</span>';
             },
             getFavoriteIcon: function(values) {
                 var cls = (MyApp.stateProvider.get(values.id)?'heartin':'heartout');

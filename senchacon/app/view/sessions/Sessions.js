@@ -6,7 +6,7 @@ Ext.define('MyApp.view.sessions.Sessions', {
     ],
 
     xtype: 'app-sessions',
-
+    scrollable: true,
     items: [{
         xtype: 'app-presentations',
         bind: {

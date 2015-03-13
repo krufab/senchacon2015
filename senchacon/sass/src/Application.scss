@@ -1,15 +1,24 @@
 .daybar {
   @include blocks($grey);
   position: relative;
+  overflow: hidden;
   
   > span {
     @include blocks($green);
+
+    &.design { background: $green; }
+    &.develop { background: $lightblue; }
+    &.deploy { background: $base-color; }
+
+    border-radius: 50px;
+    border: none;
 
     color: #fff;
     font-size: 0.7em;
     font-weight: bold;
     text-align: center;
     height: 100%;
+    line-height: 25px;
     overflow: hidden; 
     position: absolute;
     min-width: 100px;
@@ -98,7 +107,7 @@ div.presentation {
     width: 35px;
 
     position: absolute;
-    right: 0;
+    right: -5px;
     top: -35px;
 
     &:before {

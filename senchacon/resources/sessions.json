@@ -40,8 +40,8 @@
         "_id": "54f13bc1f38c9b0300f66563",
         "title": "Materializing Ext JS",
         "description": "Sencha Ext JS has always been a pioneer in widget libraries creating visual attractive interfaces out of the box allowing the creation of highly interactive single page applications. Not only did Sencha enhance the framework’s look throughout the years, but it also introduced powerful features to allow developers to customize the look and feel in an efficient way. One big step forward was the migration to Sass with Compass for styling which improved the code organization of CSS code immensely. Later the introduction of packages added support for easily adding custom themes that enhance an application’s style and components.\n\nIn 2014, Google announced Material design, a comprehensive guide for visual, motion, and interaction design across platforms and devices. Ever since, it has received praise by developers and designers. In this session, we’ll explore how to build a Material design interface on top of the most powerful enterprise JavaScript framework of today by leveraging its powerful customization features. We'll look into what makes a Material design interface, how to create a custom theme package, how to create custom components, how to create custom animations, how to make the same application mouse and touch friendly and how to make the interface responsive to desktop and tablet screens.",
-        "date": "2015-04-07T04:00:00.000Z",
-        "start_time": "2015-04-08T00:40:00.000Z",
+        "date": "2015-04-07T09:00:00.000Z",
+        "start_time": "2015-10-08T00:40:00.000Z",
         "end_time": "2015-04-08T01:30:00.000Z",
         "hashtag": "#materializingextjs",
         "track": {
@@ -62,8 +62,8 @@
         "title": "Sencha Ext JS: From desktops to smartphones - For the legacy and the modern web",
         "description": "Computing space is much more complicated today than it was 10 years ago, and it is now only natural to expect having same functionality and experience with apps and services whether you access them on your phone, tablet, desktop or (soon) even wearables. Responsiveness is a keyword that’s thrown around a lot, and while there are many ways existing technologies can help you achieve this, there is no one simple method that can be used to magically adapt an interface to different devices, and in the end nothing goes above good (interaction) design. This session will explore approaching responsiveness from the design perspective.",
         "date": "2015-04-07T04:00:00.000Z",
-        "start_time": "2015-04-07T16:30:00.000Z",
-        "end_time": "2015-04-07T17:20:00.000Z",
+        "start_time": "2015-04-07T10:30:00.000Z",
+        "end_time": "2015-04-07T12:20:00.000Z",
         "hashtag": "#oneapptorulethemall",
         "__v": 1,
         "location": {
@@ -73,7 +73,7 @@
         },
         "track": {
             "_id": "54f13696d1bcf203004dafa5",
-            "name": "Design",
+            "name": "Deploy",
             "order_index": 1,
             "__v": 0
         },
@@ -112,8 +112,8 @@
         "title": "Advanced theming techniques for Sencha Ext JS using Sencha Cmd",
         "description": "Computing space is much more complicated today than it was 10 years ago, and it is now only natural to expect having same functionality and experience with apps and services whether you access them on your phone, tablet, desktop or (soon) even wearables. Responsiveness is a keyword that’s thrown around a lot, and while there are many ways existing technologies can help you achieve this, there is no one simple method that can be used to magically adapt an interface to different devices, and in the end nothing goes above good (interaction) design. This session will explore approaching responsiveness from the design perspective.",
         "date": "2015-04-07T04:00:00.000Z",
-        "start_time": "2015-04-07T16:30:00.000Z",
-        "end_time": "2015-04-07T17:20:00.000Z",
+        "start_time": "2015-04-07T11:30:00.000Z",
+        "end_time": "2015-04-07T12:20:00.000Z",
         "hashtag": "#oneapptorulethemall",
         "__v": 1,
         "location": {
@@ -141,8 +141,8 @@
         "title": "Simplifying the experience for users and developers with Ext JS",
         "description": "Sencha Ext JS has always been a pioneer in widget libraries creating visual attractive interfaces out of the box allowing the creation of highly interactive single page applications. Not only did Sencha enhance the framework’s look throughout the years, but it also introduced powerful features to allow developers to customize the look and feel in an efficient way. One big step forward was the migration to Sass with Compass for styling which improved the code organization of CSS code immensely. Later the introduction of packages added support for easily adding custom themes that enhance an application’s style and components.\n\nIn 2014, Google announced Material design, a comprehensive guide for visual, motion, and interaction design across platforms and devices. Ever since, it has received praise by developers and designers. In this session, we’ll explore how to build a Material design interface on top of the most powerful enterprise JavaScript framework of today by leveraging its powerful customization features. We'll look into what makes a Material design interface, how to create a custom theme package, how to create custom components, how to create custom animations, how to make the same application mouse and touch friendly and how to make the interface responsive to desktop and tablet screens.",
         "date": "2015-04-07T04:00:00.000Z",
-        "start_time": "2015-04-07T20:40:00.000Z",
-        "end_time": "2015-04-07T21:30:00.000Z",
+        "start_time": "2015-04-07T14:40:00.000Z",
+        "end_time": "2015-04-07T15:30:00.000Z",
         "hashtag": "#materializingextjs",
         "track": {
             "_id": "54f13696d1bcf203004dafa5",
@@ -162,8 +162,8 @@
         "title": "UX design for modern enterprise apps",
         "description": "Computing space is much more complicated today than it was 10 years ago, and it is now only natural to expect having same functionality and experience with apps and services whether you access them on your phone, tablet, desktop or (soon) even wearables. Responsiveness is a keyword that’s thrown around a lot, and while there are many ways existing technologies can help you achieve this, there is no one simple method that can be used to magically adapt an interface to different devices, and in the end nothing goes above good (interaction) design. This session will explore approaching responsiveness from the design perspective.",
         "date": "2015-04-07T04:00:00.000Z",
-        "start_time": "2015-04-07T16:30:00.000Z",
-        "end_time": "2015-04-07T17:20:00.000Z",
+        "start_time": "2015-04-07T12:30:00.000Z",
+        "end_time": "2015-04-07T13:20:00.000Z",
         "hashtag": "#oneapptorulethemall",
         "__v": 1,
         "location": {
@@ -212,8 +212,8 @@
         "title": "Ins and outs of the Ext JS data package",
         "description": "Computing space is much more complicated today than it was 10 years ago, and it is now only natural to expect having same functionality and experience with apps and services whether you access them on your phone, tablet, desktop or (soon) even wearables. Responsiveness is a keyword that’s thrown around a lot, and while there are many ways existing technologies can help you achieve this, there is no one simple method that can be used to magically adapt an interface to different devices, and in the end nothing goes above good (interaction) design. This session will explore approaching responsiveness from the design perspective.",
         "date": "2015-04-07T04:00:00.000Z",
-        "start_time": "2015-04-07T16:30:00.000Z",
-        "end_time": "2015-04-07T17:20:00.000Z",
+        "start_time": "2015-04-07T10:30:00.000Z",
+        "end_time": "2015-04-07T11:20:00.000Z",
         "hashtag": "#oneapptorulethemall",
         "__v": 1,
         "location": {

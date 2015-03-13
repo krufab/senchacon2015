@@ -54,7 +54,7 @@ Ext.define('MyApp.view.phone.Main', {
         layout: 'card',
         reference: 'deck',
         bodyPadding: 5,
-        
+
         items: [{
             xtype: 'app-sessions',
             glyph: '83@senchacon',
