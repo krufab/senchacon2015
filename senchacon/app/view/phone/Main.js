@@ -44,10 +44,10 @@ Ext.define('MyApp.view.phone.Main', {
                 var deck = grid.up('app-main-phone').lookupReference('deck');
                 deck.removeAll();
 
-                deck.getEl().slideIn('l', {
-                     easing: 'easeIn',
-                     duration: 500
-                });
+                //deck.getEl().slideIn('l', {
+                //     easing: 'easeIn',
+                //     duration: 500
+                //});
 
                 deck.add({
                     xtype: rec.get('typename'),

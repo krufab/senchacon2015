@@ -6,7 +6,11 @@ Ext.define('MyApp.view.sessions.Sessions', {
     ],
 
     xtype: 'app-sessions',
-    scrollable: true,
+
+    scrollable: {
+        direction: 'vertical'
+    },
+
     items: [{
         xtype: 'app-presentations',
         bind: {
@@ -40,15 +44,15 @@ Ext.define('MyApp.view.sessions.Sessions', {
                 enableToggle: true,
                 glyph: '83@senchacon',
                 pressed: true,
-                text: 'Tuesday',
+                text: 'TUE',
                 value: 2
             }, {
                 glyph: '83@senchacon',
-                text: 'Wednesday',
+                text: 'WED',
                 value: 3
             }, {
                 glyph: '83@senchacon',
-                text: 'Thursday',
+                text: 'THU',
                 value: 4
             }]
         } 

@@ -7,10 +7,9 @@ Ext.define('MyApp.view.sessions.Presentations', {
 
     xtype: 'app-presentations',
 
-    scrollable: true,
     emptyText: 'There are no matching presentations.',
     itemTpl: Ext.create('Ext.XTemplate', 
-        '<div class="presentation collapsed">',
+        '<div class="presentation collapsed" style="overflow: scrollable;">',
         '    <div class="daybar">',
         '        {[this.getPresentationBar(values)]}',
         '    </div>',
