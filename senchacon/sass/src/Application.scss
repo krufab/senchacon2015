@@ -56,7 +56,7 @@ div.presentation {
     padding: 0 10px;
 
     @include transition-property(opacity, height);
-    @include transition-duration(1s);
+    @include transition-duration(0.5s);
 
     height: 300px;
     opacity: 1;
@@ -72,11 +72,18 @@ div.presentation {
   div.title {
     position: relative;
     font-weight: bold;
-    line-height: 50px;
     font-family: Klavika;
     font-size: 18px;
+    padding: 8px 0;
     vertical-align: top;
     color: $lightblue;
+
+    .inner {
+      line-height: 20px;
+      position: absolute;
+    }
+
+
   }
   div.title:before {
     color: darken($grey, 20%);
@@ -86,6 +93,13 @@ div.presentation {
   }
   &.collapsed div.title:before {
     content: "\4f";
+  }
+
+  &.nofold div.title:before,
+  &.collapsed.nofold div.title:before {
+    content: "" !important;
+    width: 25px;
+    display: inline-block;
   }
 
   .favoriteicon {

@@ -61,16 +61,15 @@ h3 {
     line-height: ($font-size + ($font-size/4)) * 1.5;
 }
 figure {
-    display: block;
-    padding: 4px;
-    line-height: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-    margin: 10px 20px 0 -4px;
+        margin: 10px 20px 0 -4px;
+        padding: 4px;
+
     > img {
         max-width: 100%;
         display: block;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
     }
     figcaption {
         font-size: 80%;
@@ -107,6 +106,9 @@ figure {
 }
 //* Lee's Demo */
 #phone {
+
+    .x-toolbar-dark .tbtitle { margin-left: -20px; }
+
     .phonelist {
         .x-grid-body {
             background: darken($base-color, 10%);

@@ -87,6 +87,7 @@ Ext.define('MyApp.model.Presentation', {
     },
 
     contains: function(string) {
+        console.log("here", string);
         return  Ext.String.createRegex(string, false, false, true).test(this.data.title) ||
                 Ext.String.createRegex(string, false, false, true).test(this.data.description);
 
