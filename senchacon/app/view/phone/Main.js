@@ -3,6 +3,7 @@ Ext.define('MyApp.view.phone.Main', {
     requires: [
         'MyApp.view.main.MainController',
         'MyApp.view.main.MainModel',
+        'Ext.fx.Anim',
         'Ext.grid.Panel'
     ],
 
@@ -16,7 +17,7 @@ Ext.define('MyApp.view.phone.Main', {
     layout: {
         type: 'border'
     },
-
+    
     items: [{
         xtype: 'gridpanel',
         cls: 'phonelist',
@@ -37,10 +38,17 @@ Ext.define('MyApp.view.phone.Main', {
         collapsible: true,
         collapseMode:'mini',
         collapsed: true,
+        animation: 'slide',
         listeners: {
             itemclick: function(grid, rec){
                 var deck = grid.up('app-main-phone').lookupReference('deck');
                 deck.removeAll();
+
+                deck.getEl().slideIn('l', {
+                     easing: 'easeIn',
+                     duration: 500
+                });
+
                 deck.add({
                     xtype: rec.get('typename'),
                     glyph: rec.get('glyph'),
@@ -69,7 +77,9 @@ Ext.define('MyApp.view.phone.Main', {
                 ui: 'dark',
                 glyph: '108@senchacon',
                 handler: function(btn){
-                    btn.up('app-main-phone').lookupReference('phonemenu').toggleCollapse();
+                    var menu = btn.up('app-main-phone').lookupReference('phonemenu');
+
+                    menu.toggleCollapse();
                 }
             },{
                 xtype: 'tbtext',

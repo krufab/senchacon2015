@@ -12,7 +12,13 @@ Ext.define('MyApp.view.main.Main', {
     plugins: ['viewport'],
 
     xtype: 'app-main',
-    
+    layout: {
+        type: 'card',
+        animation: {
+            type: 'slide',
+            direction: 'left'
+        }
+    },    
     controller: 'main',
     viewModel: {
         type: 'main'
