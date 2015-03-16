@@ -11,7 +11,8 @@ Ext.define('MyApp.view.main.MainModel', {
         'MyApp.view.info.Info',
         'MyApp.model.Presentation',
         'Ext.util.Filter',
-        'Ext.util.Sorter'
+        'Ext.util.Sorter',
+        'Ext.data.Store'
     ],
 
     data: {
@@ -55,19 +56,22 @@ Ext.define('MyApp.view.main.MainModel', {
         },
 
         speakers: {
-            fields: ['first', 'last', {
+            autoLoad: true,
+            model: 'MyApp.model.Presentation',
+            fields: ['speakers.name', 'speakers.company', {
                 name: 'day',
                 type: 'date',
                 dateFormat: 'm/d/Y'
             }],
-            data: [{
-                first: 'Lee',
-                last: 'Boonstra',
-                day: '04/07/2015',
+            filters: [{
+                filterFn: function(item) {
+                    return item.data.speakers.length > 0;
+                },
+            }],
+            sorters: [{
+                property: 'date'
             }, {
-                first: 'Max',
-                last: 'Rahder',
-                day: '04/08/2015'
+                property: 'speakername'
             }]
         },
 
@@ -79,13 +83,10 @@ Ext.define('MyApp.view.main.MainModel', {
                 //     filterFn: function(item) {
                 //         var track = item.data.track;
                 //         var isTrack =
-                //         (this.track.design      && (track==="Design"))  ||
-                //         (this.track.develop     && (track==="Develop")) ||
-                //         (this.track.deploy      && (track==="Deploy"))
-                //         ;
-
-                //         return (isTrack);
-
+                //             (this.track.design && (track === "Design")) ||
+                //             (this.track.develop && (track === "Develop")) ||
+                //             (this.track.deploy && (track === "Deploy"));
+                //         return isTrack;
                 //     },
                 //     track: {
                 //         design: '{design.pressed}',
@@ -93,40 +94,30 @@ Ext.define('MyApp.view.main.MainModel', {
                 //         deploy: '{deploy.pressed}'
                 //     },
                 //     id: 'track'
-                // },
-                // {
-                //     filterFn: function(item) {
-                //         return (item.contains(this.searchTerm));
-                //     },
-                //     searchTerm: '{search}',
-                //     id: 'search'
-                // },
-                // {
-                //     filterFn: function(item) {
-                //         return (item.data.startTime.getDay() === this.dayOfWeek);
-
-                //     },
-                //     dayOfWeek: '{dayOfWeek.value}',
-                //     id: 'dayOfWeek'
-                // },
-                // {
-                //     filterFn: function(item) {
-                //         return (!this.favorites || MyApp.stateProvider.get(item.data.id)) ;
-                //     },
-                //     favorites: '{favorites.pressed}',
-                //     id: 'favorites'
-                // }
-            ],
-            sorters: [
+                // }, 
                 {
-                    property: 'startTime'
-                },
-                {
-                    property: 'track'
+                    filterFn: function(item) {
+                        return (item.data.startTime.getDay() === this.dayOfWeek);
+                    },
+                    dayOfWeek: '{dayOfWeek.value}',
+                    id: 'dayOfWeek'
+                }, {
+                    filterFn: function(item) {
+                        return (!this.favorites || MyApp.stateProvider.get(item.data.id));
+                    },
+                    favorites: '{favorites.pressed}',
+                    id: 'favorites'
                 }
-            ]
-
-
+            ],
+            sorters: [{
+                property: 'startTime'
+            }, {
+                property: 'track'
+            }],
+            listeners: {
+                load: 'onStoreLoad',
+                update: 'onStoreUpdate'
+            }
         }
 
 

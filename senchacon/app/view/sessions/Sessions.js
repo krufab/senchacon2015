@@ -34,7 +34,6 @@ Ext.define('MyApp.view.sessions.Sessions', {
         },
         {
             xtype: 'segmentedbutton',
-            date: null,
             reference: 'dayOfWeek',
             itemId: 'dayOfWeek',
             items: [{
@@ -52,31 +51,37 @@ Ext.define('MyApp.view.sessions.Sessions', {
                 text: 'Thursday',
                 value: 4
             }]
-        }, {
-            xtype: 'segmentedbutton',
-            reference: 'tracks',
-            itemId: 'track',
-            allowMultiple: true,
-            items: [{
-                reference: 'design',
-                enableToggle: true,
-                glyph: '101@senchacon',
-                iconCls: 'design',
-                pressed: true
-            }, {
-                reference: 'develop',
-                enableToggle: true,
-                glyph: '99@senchacon',
-                iconCls: 'develop',
-                pressed: true
-            }, {
-                reference: 'deploy',
-                enableToggle: true,
-                glyph: '67@senchacon',
-                iconCls: 'deploy',
-                pressed: true
-            }]
-        }]
+        } 
+        // ,{
+        //     xtype: 'segmentedbutton',
+        //     reference: 'tracks',
+        //     itemId: 'track',
+        //     allowMultiple: true,
+        //     items: [{
+        //         reference: 'design',
+        //         enableToggle: true,
+        //         itemId: 'design',
+        //         glyph: '101@senchacon',
+        //         iconCls: 'design',
+        //         pressed: true
+        //     }, {
+        //         reference: 'develop',
+        //         enableToggle: true,
+        //         itemId: 'develop',
+        //         glyph: '99@senchacon',
+        //         iconCls: 'develop',
+        //         pressed: true
+        //     }, {
+        //         reference: 'deploy',
+        //         enableToggle: true,
+        //         itemId: 'deploy',
+        //         glyph: '67@senchacon',
+        //         iconCls: 'deploy',
+        //         pressed: true
+        //     }
+        //    ]
+        //}
+        ]
     }]
 
 

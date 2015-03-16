@@ -1,17 +1,11 @@
 Ext.define('MyApp.view.sessions.Presentations', {
     extend: 'Ext.view.View',
     requires: [
-        'MyApp.view.main.MainController',
         'Ext.XTemplate',
         'Ext.button.Segmented'
     ],
 
     xtype: 'app-presentations',
-
-    controller: 'main',
-    viewModel: {
-        type: 'main'
-    },
 
     scrollable: true,
     emptyText: 'There are no matching presentations.',
@@ -93,7 +87,6 @@ Ext.define('MyApp.view.sessions.Presentations', {
         } else if (!Ext.fly(e.target).hasCls('description')){
             Ext.fly(item).down('div.presentation').toggleCls('collapsed');
         }
-
     }
 
 

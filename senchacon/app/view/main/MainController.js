@@ -18,8 +18,18 @@ Ext.define('MyApp.view.main.MainController', {
         var grid = form.up('grid');
 
         grid.getStore().addFilter({
-           property: 'first',
+           property: 'speakername',
            value: form.getValue()
         });
+    },
+
+    onStoreLoad: function(store, records) {
+        Ext.Array.forEach(records, function(presentation){
+            presentation.set('favorite', !!MyApp.stateProvider.get(presentation.id));
+        });
+    },
+
+    onStoreUpdate: function(store, record) {
+        MyApp.stateProvider.set(record.id, record.data.favorite);
     }
 });

@@ -34,19 +34,21 @@ Ext.define('MyApp.view.speakers.Speakers', {
     }],
 
     columns: [{
-        text: 'First Name',
-        dataIndex: 'first',
+        text: 'Speaker',
+        dataIndex: 'speakername',
+        flex: 1,
         filter: {
             type: 'string'
         }
     }, {
-        text: 'Last Name',
-        dataIndex: 'last'
+        text: 'Company',
+        dataIndex: 'speakercompany'
     }, {
         xtype: 'datecolumn',
         text: 'Event Date',
         format: 'F j, Y',
-        dataIndex: 'day',
-        flex: 1
+        dataIndex: 'date',
+        align: 'right',
+        width: 120
     }]
 });
