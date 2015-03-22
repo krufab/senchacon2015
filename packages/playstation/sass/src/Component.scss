@@ -1,0 +1,113 @@
+@import 'compass/css3/filter';
+
+@mixin cssfilter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+@-webkit-keyframes play {
+   0% { 
+   	@include filter(blur(0)); 
+   	@include cssfilter(invert, 0%);
+   }
+   10% { 
+   	@include filter(blur(0)); 
+   	@include cssfilter(invert, 0%);
+   }
+   50% { 
+   	@include filter(blur(30px)); 
+   	@include cssfilter(invert, 40%);
+   }
+   90% { 
+   	@include filter(blur(0)); 
+   	@include cssfilter(invert, 0%);
+   }
+   100% { 
+   	@include filter(blur(0)); 
+   	@include cssfilter(invert, 0%);
+   } 
+}
+
+/* reset background */
+.x-body:before { 
+	background: url('bg_psn2.jpg') transparent 50% 50%;
+	content: "";
+	-webkit-animation: play 12s steps(600) infinite;
+	animation: play 12s steps(600) infinite;
+	-webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+.x-body {
+	background: url('bg_psn2.jpg') transparent 50% 50%;
+	background-position: fixed;
+	position: fixed;
+}
+
+body.x-border-layout-ct, div.x-border-layout-ct,
+.x-dashboard-body,
+.x-toolbar-default {
+	background-color: transparent;
+	@include filter(blur(0));
+}
+
+/* gamesslider */
+
+.gamesliderroot {
+	.game {
+		img{
+			background: #000;
+			border: 1px solid #000;
+		}
+
+		h3 {
+			position: fixed;
+			top: 220px;
+			left: 0;
+			z-index: 1;
+		}
+
+		margin: 30px 1px 0;
+
+		.extra {
+			background: #000;
+			color: #fff;
+
+			ul,
+			span.progress,
+			span.platformslider {
+				display: block;
+				padding: 8px;
+				border-bottom: 1px solid $glow;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					display: inline-block;
+					padding: 8px 5px;
+				}
+			}
+		}
+	}
+
+	.game.x-view-item-focused {
+		outline: none !important;
+
+		img {
+			border: 1px solid #fff;
+			-webkit-box-shadow: -2px 4px 28px 5px $glow;
+			-moz-box-shadow: -2px 4px 28px 5px $glow;
+			box-shadow: -2px 4px 28px 5px $glow;
+		}
+	}
+}

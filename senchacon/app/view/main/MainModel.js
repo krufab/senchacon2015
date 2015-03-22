@@ -58,13 +58,13 @@ Ext.define('MyApp.view.main.MainModel', {
         speakers: {
             autoLoad: true,
             model: 'MyApp.model.Presentation',
-            fields: ['speakers.name', 'speakers.company', {
-                name: 'day',
-                type: 'date',
-                dateFormat: 'm/d/Y'
-            }],
+//            fields: ['speakers.name', 'speakers.company', {
+//                name: 'day',
+//                type: 'date',
+//                dateFormat: 'm/d/Y'
+//            }],
             filters: [{
-                filterFn: function(item) {
+                filterFn: function (item) {
                     return item.data.speakers.length > 0;
                 },
             }],
@@ -94,15 +94,15 @@ Ext.define('MyApp.view.main.MainModel', {
                 //         deploy: '{deploy.pressed}'
                 //     },
                 //     id: 'track'
-                // }, 
+                // },
                 {
-                    filterFn: function(item) {
+                    filterFn: function (item) {
                         return (item.data.startTime.getDay() === this.dayOfWeek);
                     },
                     dayOfWeek: '{dayOfWeek.value}',
                     id: 'dayOfWeek'
                 }, {
-                    filterFn: function(item) {
+                    filterFn: function (item) {
                         return (!this.favorites || MyApp.stateProvider.get(item.data.id));
                     },
                     favorites: '{favorites.pressed}',

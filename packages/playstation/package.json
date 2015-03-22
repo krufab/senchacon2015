@@ -1,0 +1,22 @@
+{
+    "name": "playstation",
+    "type": "theme",
+    "creator": "Lee Boonstra",
+    "summary": "Playstation Dashboard theme",
+    "detailedDescription": "Ext JS themes can't look pretty? No way! Check this out!",
+    "version": "1.0.0",
+    "compatVersion": "1.0.0",
+    "format": "1",
+    "slicer": {
+        "js": [
+            {
+                "path": "${package.dir}/sass/example/custom.js",
+                "isWidgetManifest": true
+            }
+        ]
+    },
+    "output": "${package.dir}/build",
+    "local": true,
+    "requires": [],
+    "extend": "ext-theme-neptune"
+}
