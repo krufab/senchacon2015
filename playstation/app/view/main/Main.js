@@ -38,41 +38,41 @@ Ext.define('PlayStation.view.main.Main', {
                     xtype: 'component',
                     cls: 'username',
                     bind: {
-                        html: '{profile.username}'
+                        html: 'Username: {profile.username}'
                     }
-                }, '->', {
+                }, '-', {
                     xtype: 'component',
                     cls: 'trophies',
                     bind: {
-                        html: '{profile.trophies.total}'
+                        html: '<span class="total">{profile.trophies.total}</span>'
                     }
                 }, 
                 {
                     xtype: 'component',
                     cls: 'bronze',
                     bind: {
-                        html: '{profile.trophies.bronze}'
+                        html: '<span class="bronze">{profile.trophies.bronze}</span>'
                     }
                 },
                 {
                     xtype: 'component',
                     cls: 'silver',
                     bind: {
-                        html: '{profile.trophies.silver}'
+                        html: '<span class="silver">{profile.trophies.silver}</span>'
                     }
                 },
                 {
                     xtype: 'component',
                     cls: 'gold',
                     bind: {
-                        html: '{profile.trophies.gold}'
+                        html: '<span class="gold">{profile.trophies.gold}</span>'
                     }
                 },
                 {
                     xtype: 'component',
                     cls: 'platinum',
                     bind: {
-                        html: '{profile.trophies.platinum}'
+                        html: '<span class="platinum">{profile.trophies.platinum}</span>'
                     }
                 }, '-', {
                     xtype: 'component',
