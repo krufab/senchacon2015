@@ -19,9 +19,6 @@ Ext.define('PlayStation.view.slider.Slider', {
     tpl: ['<div class="gamesliderroot"><tpl for=".">',
         '<div class="game">',
             '<img src="http:{img}"><h3>{title}</h3>',
-            '<div class="extra"><span class="platformslider"><span>{platform}</span></span>',
-            '<span class="progress">Progress: {progress}</span>',
-            '<ul class="trophies"><li class="bronze">{trophies.bronze}</li><li class="silver">{trophies.silver}</li><li class="gold">{trophies.gold}</li><li class="platinum">{trophies.platinum}</li></ul></div>',
         '</div>',
         '</tpl></div>'],
     itemSelector: 'div.game',
@@ -31,6 +28,17 @@ Ext.define('PlayStation.view.slider.Slider', {
 	        data: games,
 	        model: 'PlayStation.model.Game'
 	    }));
+    },
+    listeners: {
+        itemmouseenter: function(view, record) {
+            var panel = Ext.getCmp('extra');
+            panel.setData(record.getData());
+            panel.enable();
+        },
+        itemmouseleave: function(){
+            Ext.getCmp('extra').disable();
+        }
     }
 
 })
+

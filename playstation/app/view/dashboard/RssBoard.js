@@ -14,10 +14,23 @@ Ext.define('PlayStation.view.dashboard.RssBoard', {
     {
 
         xtype: 'gamesslider',
-        height: 320,
+        height: 185,
         region: 'north'
     },
     {
+
+        lbar: [{
+            xtype: 'component',
+            width: 250,
+            margin: 0,
+            tpl: ['<span class="platformslider"><span>{platform}</span></span>',
+            '<span class="progress">Progress: {progress}</span>',
+            '<ul class="trophies"><li class="bronze">{trophies.bronze}</li><li class="silver">{trophies.silver}</li><li class="gold">{trophies.gold}</li><li class="platinum">{trophies.platinum}</li></ul>',
+            '</div>'],
+            height: 110,
+            id: 'extra',
+            disabled: true
+        }],
 
         xtype: 'dashboard',
         reference: 'dashboard',
