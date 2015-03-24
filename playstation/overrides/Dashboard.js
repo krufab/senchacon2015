@@ -11,11 +11,7 @@ Ext.define('GoogleRssView', {
 	title: null,
     detailTpl:
     '<tpl for="entries[currentEntry]">' +
-        '<div class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-detail">' +
-            '<h2>{title}</h2>' +
-            '{content}' +
-        '</div>' +
-        '<div class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-detail-header">' +
+    '<div class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-detail-header">' +
             '<div class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-detail-nav">' +
                 '<tpl if="parent.hasPrev">' +
                     '<span class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-prev ' +
@@ -37,9 +33,13 @@ Ext.define('GoogleRssView', {
                 '</span> '+
             '</div>' +
             '<div class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-title">'+
-                '<a href="{link}" target=_blank>{title}</a>'+
+                '<a href="{link}" target=_blank>{title:ellipsis(33)}</a>'+
             '</div>'+
             '<div class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-author">By {author} - {publishedDate:this.date}</div>' +
+        '</div>' +
+        '<div class="' + Ext.baseCSSPrefix + 'dashboard-googlerss-detail">' +
+            '<h2>{title}</h2>' +
+            '{content}' +
         '</div>' +
     '</tpl>'
 })

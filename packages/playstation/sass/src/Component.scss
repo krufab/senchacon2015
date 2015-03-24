@@ -70,14 +70,26 @@ body {
 	position: fixed;
 }
 
+/* dashboard */
+
+.x-dashboard-panel {
+	.x-panel-body-default {
+		background: none;
+
+		> .x-component {
+			background: rgba(255,255,255,0.9);
+		}
+	}
+}
+
 body.x-border-layout-ct, div.x-border-layout-ct,
 .x-dashboard-body,
 .x-toolbar-default {
 	background-color: transparent;
 	@include filter(blur(0));
 }
-
 .x-dashboard-googlerss-detail {
+	background: none;
 	text-transform: initial;
 	line-height: 22px;
 	padding: 0 10px 10px 10px;
@@ -116,11 +128,7 @@ body.x-border-layout-ct, div.x-border-layout-ct,
 		margin-top: 20px;
 	}
 
-	.total {
-
-	}
-
-	span.bronze, span.silver, span.gold, span.platinum {
+	span.total, span.bronze, span.silver, span.gold, span.platinum {
 		padding-left: 25px;
 		height: 21px;
 		display: inline-block;
@@ -191,6 +199,9 @@ body.x-border-layout-ct, div.x-border-layout-ct,
 		}
 	}
 }
+
+/* game trophies extra */
+
 #extra {
 
 	border: 1px solid #000;
@@ -209,7 +220,7 @@ body.x-border-layout-ct, div.x-border-layout-ct,
 
 	color: #fff;
 	margin: 0;
-
+	font-weight: bold;
 
 	&.x-item-disabled {
 		display: none;
