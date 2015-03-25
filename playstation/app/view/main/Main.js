@@ -35,7 +35,7 @@ Ext.define('PlayStation.view.main.Main', {
                     xtype: 'button',
                     cls: 'info',
                     scale: 'large',
-                    glyph: '115@playstation',
+                    glyph: '115@playstation'
                 }, '->', {
                     xtype: 'button',
                     cls: 'username',

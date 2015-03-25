@@ -12,8 +12,8 @@ body {
     &.x-body:before {
         background: url('bg_psn2.jpg') transparent 50% 50%;
         background-attachment: fixed;
-        -webkit-background-size: 100%;
-        background-size: 100%;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
         content: "";
         -webkit-animation: play 12s steps(600) infinite;

@@ -1,7 +1,6 @@
-
-
-/* gamesslider */
-
+/*
+ *	Game Slider absolute neccesarry styles.
+ */
 .gamesliderroot {
 	width: 240px * 15 !important;
 	overflow-x: scroll;
@@ -33,24 +32,16 @@
 			padding: 2px 0;
 		}
 
-		h3,
-		.extra {
+		h3 {
 			display: none;
 		}
 	}
 
-	//.game.selected,
 	.game.x-view-item-focused {
 		-webkit-transform: scale(1.1);
 
 		h3 {
 			display: inline-block !important;
 		}
-		.extra {
-			display: block !important;
-		}
-
 	}
-
-
 }
