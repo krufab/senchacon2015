@@ -22,6 +22,7 @@ Ext.define('PlayStation.view.slider.Slider', {
         '</div>',
         '</tpl></div>'],
     itemSelector: 'div.game',
+
     updateGames: function(games){
     	this.setStore(Ext.create('Ext.data.Store', {
 	        storeId: 'Games',
@@ -29,6 +30,7 @@ Ext.define('PlayStation.view.slider.Slider', {
 	        model: 'PlayStation.model.Game'
 	    }));
     },
+
     listeners: {
         itemmouseenter: function(view, record) {
             var panel = Ext.getCmp('extra');
@@ -39,6 +41,5 @@ Ext.define('PlayStation.view.slider.Slider', {
             Ext.getCmp('extra').disable();
         }
     }
-
-})
+});
 

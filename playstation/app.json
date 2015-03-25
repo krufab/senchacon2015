@@ -214,7 +214,10 @@
         "base": "${app.dir}",
         "manifest": "bootstrap.json",
         "microloader": "bootstrap.js",
-        "css": "bootstrap.css"
+        "css": "bootstrap.css",
+        "slider": {
+            "enable": false
+        }
     },
 
     /**
@@ -252,6 +255,7 @@
      *      }
      *
      */
+        
     "output": {
         "base": "${workspace.build.dir}/${build.environment}/${app.name}"
     },

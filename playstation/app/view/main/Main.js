@@ -29,22 +29,30 @@ Ext.define('PlayStation.view.main.Main', {
                 items: [{
                     xtype: 'button',
                     cls: 'shop',
-                    text: 'shop'
+                    scale: 'large',
+                    glyph: '105@playstation'
                 }, {
                     xtype: 'button',
                     cls: 'info',
-                    text: 'info'
+                    scale: 'large',
+                    glyph: '115@playstation',
                 }, '->', {
-                    xtype: 'component',
+                    xtype: 'button',
                     cls: 'username',
+                    scale: 'large',
+                    glyph: '112@playstation',
+                    publishes: ['text'],
                     bind: {
-                        html: 'Username: {profile.username}'
+                        text: 'Username: {profile.username}'
                     }
                 }, '-', {
-                    xtype: 'component',
+                    xtype: 'button',
                     cls: 'trophies',
+                    scale: 'large',
+                    glyph: '116@playstation',
+                    publishes: ['text'],
                     bind: {
-                        html: '<span class="total">{profile.trophies.total}</span>'
+                        text: '{profile.trophies.total}'
                     }
                 }, 
                 {

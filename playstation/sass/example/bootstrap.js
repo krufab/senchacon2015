@@ -73,9 +73,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
         },
         _tags = (Ext.platformTags = {}),
 
-        _debug = function (message) {
-            //console.log(message);
-        },
         _apply = function (object, config, defaults) {
             if (defaults) {
                 _apply(object, defaults);
@@ -129,7 +126,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             /*
              * simple helper method for debugging
              */
-            debug: _debug,
 
             /*
              * enables / disables loading scripts via script / link elements rather
@@ -332,7 +328,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                     }
 
                     if (!Boot.scripts[key = Boot.canonicalUrl(src)]) {
-                        _debug("creating entry " + key + " in Boot.init");
                         entry = new Entry({
                             key: key,
                             url: src,
@@ -454,7 +449,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             },
 
             load: function (request) {
-                _debug("Boot.load called");
                 var request = new Request(request);
 
                 if (request.sync || Boot.syncMode) {
@@ -464,7 +458,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                 // If there is a request in progress, we must
                 // queue this new request to be fired  when the current request completes.
                 if (Boot.currentRequest) {
-                    _debug("current active request, suspending this request");
                     // trigger assignment of entries now to ensure that overlapping
                     // entries with currently running requests will synchronize state
                     // with this pending one as they complete
@@ -478,7 +471,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             },
 
             loadSync: function (request) {
-                _debug("Boot.loadSync called");
                 var request = new Request(request);
 
                 Boot.syncMode++;
@@ -507,7 +499,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                     while(Boot.suspendedQueue.length > 0) {
                         next = Boot.suspendedQueue.shift();
                         if(!next.done) {
-                            _debug("resuming suspended request");
                             Boot.load(next);
                             break;
                         }
@@ -577,7 +568,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                 }
 
                 try {
-                    _debug("fetching " + url + " " + (async ? "async" : "sync"));
                     xhr.open('GET', url, async);
                     xhr.send(null);
                 } catch (err) {
@@ -940,7 +930,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             var listeners = this.listeners,
                 listener;
             if(listeners) {
-                _debug("firing request listeners");
                 while((listener = listeners.shift())) {
                     listener(this);
                 }
@@ -958,7 +947,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             return cfg;
         }
 
-        _debug("creating entry for " + cfg.url);
 
         var charset = cfg.charset || Boot.config.charset,
             manifest = Ext.manifest,
@@ -997,7 +985,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
         isCrossDomain: function() {
             var me = this;
             if(me.crossDomain === undefined) {
-                _debug("checking " + me.getLoadUrl() + " for prefix " + Boot.origin);
                 me.crossDomain = (me.getLoadUrl().indexOf(Boot.origin) !== 0);
             }
             return me.crossDomain;
@@ -1015,7 +1002,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             var me = this,
                 el = me.el;
             if (!el) {
-                _debug("creating element for " + me.url);
                 if (me.isCss()) {
                     tag = tag || "link";
                     el = doc.createElement(tag);
@@ -1068,11 +1054,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             me.loaded = true;
             if ((exception || status === 0) && !_environment.phantom) {
                 me.error =
-                    ("Failed loading synchronously via XHR: '" + url +
-                        "'. It's likely that the file is either being loaded from a " +
-                        "different domain or from the local file system where cross " +
-                        "origin requests are not allowed for security reasons. Try " +
-                        "asynchronous loading instead.") ||
                     true;
                 me.evaluated = true;
             }
@@ -1084,9 +1065,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             }
             else {
                 me.error =
-                    ("Failed loading synchronously via XHR: '" + url +
-                        "'. Please verify that the file exists. XHR status code: " +
-                        status) ||
                     true;
                 me.evaluated = true;
             }
@@ -1125,7 +1103,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
         },
 
         inject: function (content, asset) {
-            _debug("injecting content for " + this.url);
             var me = this,
                 head = Boot.getHead(),
                 url = me.url,
@@ -1377,7 +1354,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             var listeners = this.listeners,
                 listener;
             if(listeners && listeners.length > 0) {
-                _debug("firing event listeners for url " + this.url);
                 while((listener = listeners.shift())) {
                     listener(this);
                 }
@@ -1579,7 +1555,6 @@ Ext.Microloader = Ext.Microloader || (function () {
              * @private
              */
             notify: function () {
-                Boot.debug("notifying microloader ready listeners...");
                 var listener;
                 while((listener = _listeners.shift())) {
                     listener();
