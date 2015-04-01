@@ -6,9 +6,31 @@
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>SenchaCon</title>
 
-    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
+    <script type="text/javascript">
+    //PLEASE NOTE THIS CHANGE
+    var Ext = Ext || {};
+	Ext.beforeLoad = function (tags) {
+        var s = location.search,
+        	profile;  // the query string (ex "?foo=1&bar")
 
+        // For testing look for ?touch" in the URL to override
+        // device detection default.
+        if (s.match(/\btouch\b/)) {
+             profile = 'senchacon-theme-touch';
+        } else {
+        	//if it's a touch device, show touch theme
+        	if(tags.touch){
+        		profile = 'senchacon-theme-touch';
+        	} else {
+        		profile = 'senchacon-theme';
+        	}
+        }
+
+        Ext.manifest = profile; //must match a build profile name
+    }; 
+    </script>
+     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
 </head>
 
 <body></body>

@@ -1,7 +1,7 @@
 {
-    "name": "senchacon-theme",
+    "name": "senchacon-theme-touch",
     "type": "theme",
-    "extend": "ext-theme-neptune",
+    "extend": "ext-theme-neptune-touch",
     "creator": "Lee Boonstra",
     "summary": "Short summary",
     "detailedDescription": "Long description of package",

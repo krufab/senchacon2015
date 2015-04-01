@@ -1,0 +1,10 @@
+$tab-base-color: $base-color;
+$tab-base-color-over: $base-color;
+$tab-base-color-active : $base-color;
+$tab-color: lighten($base-color, 40%);
+$tab-color-over: #fff;
+$tab-color-active: #fff;
+$tab-color-focus: $base-color;
+$tab-color-focus-over: $base-color;
+$tab-color-focus-active: #fff;  
+$tabbar-border-color: $green;

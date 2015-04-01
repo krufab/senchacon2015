@@ -66,7 +66,7 @@ Ext.define('MyApp.view.main.MainModel', {
             filters: [{
                 filterFn: function (item) {
                     return item.data.speakers.length > 0;
-                },
+                }
             }],
             sorters: [{
                 property: 'date'
